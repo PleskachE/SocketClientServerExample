@@ -1,0 +1,7 @@
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\bin\Debug\SocketTcpClient.exe.config
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\bin\Debug\SocketTcpClient.exe
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\bin\Debug\SocketTcpClient.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\obj\Debug\SocketTcpClient.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\obj\Debug\SocketTcpClient.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\obj\Debug\SocketTcpClient.exe
+C:\Users\Sony\source\repos\SocketClientServerExample\SocketTcpClient\obj\Debug\SocketTcpClient.pdb
