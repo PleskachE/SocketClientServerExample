@@ -1,2 +1,2 @@
-# SocketClientServerExample
+Клиент-серверное приложение на сокетах TCP
  
