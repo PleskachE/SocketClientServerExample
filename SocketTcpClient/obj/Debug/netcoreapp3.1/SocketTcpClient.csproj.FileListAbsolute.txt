@@ -1,0 +1,13 @@
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.exe
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.deps.json
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.runtimeconfig.json
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.runtimeconfig.dev.json
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.dll
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\bin\Debug\netcoreapp3.1\SocketTcpClient.pdb
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.AssemblyInfoInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.AssemblyInfo.cs
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.dll
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.pdb
+C:\Users\Sony\source\repos\SocketClientServerExampleNow\SocketTcpClient\obj\Debug\netcoreapp3.1\SocketTcpClient.genruntimeconfig.cache
