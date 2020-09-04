@@ -9,8 +9,8 @@ namespace SocketTcpServer
 
         static void Main(string[] args)
         {
-            MainServer server = new MainServer(port, host);
-            server.Start();
+            AsyncServer server = new AsyncServer(port, host);
+            server.ListenSocket();
             Console.ReadKey();
         }
     }
