@@ -9,7 +9,7 @@ namespace SocketTcpServer
     public class AsyncServer
     {
         private IPEndPoint _ipPoint;
-        private static ManualResetEvent _allDone;
+        private static ManualResetEvent _allStream;
         private Socket _listenSocket;
 
         public AsyncServer(int port, string host)
@@ -17,7 +17,7 @@ namespace SocketTcpServer
             _ipPoint = new IPEndPoint(IPAddress.Parse(host), port);
             _listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _listenSocket.Bind(_ipPoint);
-            _allDone = new ManualResetEvent(false);
+            _allStream = new ManualResetEvent(false);
         }
 
         public void ListenSocket()
@@ -26,15 +26,15 @@ namespace SocketTcpServer
             _listenSocket.Listen(10);
             while (true)
             {
-                _allDone.Reset();
+                _allStream.Reset();
                 _listenSocket.BeginAccept(new AsyncCallback(AcceptCallback), _listenSocket);
-                _allDone.WaitOne();
+                _allStream.WaitOne();
             }
         }
 
         private static void AcceptCallback(IAsyncResult ar)
         {
-            _allDone.Set();
+            _allStream.Set();
             Socket listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
             StateObject state = new StateObject();
