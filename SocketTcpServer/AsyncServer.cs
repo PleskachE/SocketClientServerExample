@@ -16,7 +16,14 @@ namespace SocketTcpServer
         {
             _ipPoint = new IPEndPoint(IPAddress.Parse(host), port);
             _listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            _listenSocket.Bind(_ipPoint);
+            try
+            {
+                _listenSocket.Bind(_ipPoint);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             _allStream = new ManualResetEvent(false);
         }
 
@@ -47,7 +54,15 @@ namespace SocketTcpServer
             String message = String.Empty;
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.socket;
-            int bytes = handler.EndReceive(ar);
+            int bytes = 0;
+            try
+            {
+                bytes = handler.EndReceive(ar);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             if (bytes > 0)
             {
                 do

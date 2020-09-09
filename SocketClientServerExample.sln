@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketTcpServer", "SocketTc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketTcpClient", "SocketTcpClient\SocketTcpClient.csproj", "{59D28A9E-1AAB-4BDB-93E8-0DD25770E2AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{8C5794B1-4DBD-499D-A3AA-F486E026F3EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{8C5794B1-4DBD-499D-A3AA-F486E026F3EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

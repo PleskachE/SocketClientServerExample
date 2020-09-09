@@ -5,7 +5,7 @@ namespace SocketTcpServer
 {
     public class StateObject
     {
-        public const int BytesCounter = 1024;  
+        public const int BytesCounter = 256;  
         public byte[] date = new byte[BytesCounter];
         public StringBuilder builder = new StringBuilder();
         public Socket socket = null;

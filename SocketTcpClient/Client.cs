@@ -2,7 +2,6 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Reflection.Metadata;
 using System.Text;
 
 namespace SocketTcpClient
@@ -20,15 +19,20 @@ namespace SocketTcpClient
 
         private void Connect(Socket socket)
         {
-            try
+            do
             {
-                socket.Connect(_ipPoint);
+                try
+                {
+                    socket.Connect(_ipPoint);
+                }
+                catch 
+                {
+                    ConnectionError();
+                }
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            while (socket.Connected != true);
             Console.Write("Введите сообщение:");
+
         }
 
         private void SendMessage(Socket socket)
@@ -77,6 +81,13 @@ namespace SocketTcpClient
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
             }
+        }
+
+        private void ConnectionError()
+        {
+            Console.WriteLine("Ошибка подключения к серверу. Нажмите любую кнопку что бы попробывать ещё раз");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
