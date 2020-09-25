@@ -1,25 +1,26 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Common
+namespace WpfTcpClient.Model
 {
-    public class User : INotifyPropertyChanged
+    public class Message : INotifyPropertyChanged
     {
-        private string _name { get; set; }
+        private string _text;
 
-        public User(string name)
+        public Message() { }
+
+        public Message(string text)
         {
-            _name = name;
+            this._text = text;
         }
 
-        public string Name
+        public string Text
         {
-            get { return _name; }
+            get { return _text; }
             set
             {
-                _name = value;
-                OnPropertyChanged("Name");
+                _text = value;
+                OnPropertyChanged("Text");
             }
         }
 
@@ -29,6 +30,5 @@ namespace Common
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
-
     }
 }

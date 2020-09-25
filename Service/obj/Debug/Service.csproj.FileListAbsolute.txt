@@ -1,0 +1,11 @@
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Service.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Service.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\obj\Debug\Service.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\obj\Debug\Service.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.pdb
