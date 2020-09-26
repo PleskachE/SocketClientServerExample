@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\obj\Debug\
+C:\Users\User\source\repos\SocketClientServerExample\WpfClient\obj\Debug\
 WpfTcpClient
 none
 false
 DEBUG;TRACE
-C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\App.xaml
+C:\Users\User\source\repos\SocketClientServerExample\WpfClient\App.xaml
 21685669277
 
 91845385324
-15-235173603
+15-455434424
 View\LoginWindow.xaml;View\MainWindow.xaml;
 
 False

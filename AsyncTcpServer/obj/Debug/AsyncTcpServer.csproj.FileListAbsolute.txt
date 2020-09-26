@@ -8,3 +8,13 @@ C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\As
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.pdb
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.csproj.CopyComplete
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\AsyncTcpServer.exe.config
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\AsyncTcpServer.exe
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\AsyncTcpServer.pdb
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.dll
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.pdb
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.csproj.CopyComplete
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.exe
+C:\Users\User\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.pdb

@@ -9,3 +9,14 @@ C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLib
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.pdb
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.pdb
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\Service.dll
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\Service.pdb
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.dll
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\Common.dll
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.pdb
+C:\Users\User\source\repos\SocketClientServerExample\Service\bin\Debug\Common.pdb
+C:\Users\User\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SocketClientServerExample\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\User\source\repos\SocketClientServerExample\Service\obj\Debug\Service.dll
+C:\Users\User\source\repos\SocketClientServerExample\Service\obj\Debug\Service.pdb

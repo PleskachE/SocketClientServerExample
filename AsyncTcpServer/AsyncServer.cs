@@ -9,9 +9,9 @@ namespace AsyncTcpServer
 {
     public class AsyncServer
     {
-        private IPEndPoint _ipPoint;
+        private readonly IPEndPoint _ipPoint;
         private static ManualResetEvent _allStream;
-        private Socket _listenSocket;
+        private readonly Socket _listenSocket;
         private static string _allMessage;
         private static SystemMessage _systemMessage;
 
@@ -50,12 +50,12 @@ namespace AsyncTcpServer
             Socket handler = listener.EndAccept(ar);
             StateObject state = new StateObject();
             state.socket = handler;
+            // что такое 0
             handler.BeginReceive(state.date, 0, StateObject.BytesCounter, 0, new AsyncCallback(ReadCallback), state);
         }
 
         private static void ReadCallback(IAsyncResult ar)
         {
-            String message = String.Empty;
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.socket;
             int bytes = 0;
@@ -69,12 +69,14 @@ namespace AsyncTcpServer
             }
             if (bytes > 0)
             {
+                string message;
                 do
                 {
                     state.builder.Append(Encoding.Unicode.GetString(state.date, 0, bytes));
                     message = state.builder.ToString();
                 }
                 while (handler.Available > 0);
+                // очень плохое решение, так лучше не делать
                 if (message != _systemMessage.SystemMessages[1])
                 {
                     Console.WriteLine(DateTime.Now.ToShortTimeString() + ": " + message);

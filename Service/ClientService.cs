@@ -6,7 +6,7 @@ namespace Service
 {
     public class ClientService : IClientService
     {
-        private MainTcpClient _client;
+        private readonly MainTcpClient _client;
 
         public ClientService(User User)
         {

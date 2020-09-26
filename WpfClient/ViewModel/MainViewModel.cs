@@ -2,11 +2,6 @@
 using Service;
 using Service.Intefaces;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using WpfTcpClient.Infrastructure;
@@ -21,8 +16,8 @@ namespace WpfTcpClient.ViewModel
 
         public IWindowFactory WindowFactory = new WindowFactory();
         private IClientService _service;
-        private DispatcherTimer _timer;
-        private SystemMessage _systemMessage;
+        private readonly DispatcherTimer _timer;
+        private readonly SystemMessage _systemMessage;
 
         public MainViewModel()
         {
@@ -90,7 +85,7 @@ namespace WpfTcpClient.ViewModel
                 if (_userMessage == null)
                     _userMessage = new Message();
                 _userMessage.Text = value.Text;
-                OnPropertyChanged("Text");
+                OnPropertyChanged(nameof(_userMessage.Text));
             }
         }
 
@@ -108,7 +103,7 @@ namespace WpfTcpClient.ViewModel
                 if (_allMessages == null)
                     _allMessages = new Message();
                 _allMessages.Text += value;
-                OnPropertyChanged("Text");
+                OnPropertyChanged(nameof(_allMessages.Text));
             }
         }
 
@@ -128,7 +123,7 @@ namespace WpfTcpClient.ViewModel
             set
             {
                 _user = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged(nameof(_user.Name));
             }
         }
 

@@ -7,3 +7,12 @@ C:\Users\Sony\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\Cli
 C:\Users\Sony\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.csproj.CopyComplete
 C:\Users\Sony\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.pdb
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\bin\Debug\ClientLibrary.dll
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\bin\Debug\ClientLibrary.pdb
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\bin\Debug\Common.dll
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\bin\Debug\Common.pdb
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.csproj.CopyComplete
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.dll
+C:\Users\User\source\repos\SocketClientServerExample\ClientLibrary\obj\Debug\ClientLibrary.pdb
