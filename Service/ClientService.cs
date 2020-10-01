@@ -1,4 +1,5 @@
 ﻿using ClientLibrary;
+using ClientLibrary.Interfaces;
 using Common;
 using Service.Intefaces;
 
@@ -6,7 +7,7 @@ namespace Service
 {
     public class ClientService : IClientService
     {
-        private MainTcpClient _client;
+        private IClient _client;
 
         public ClientService(User User)
         {

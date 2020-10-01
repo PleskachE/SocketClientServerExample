@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using ClientLibrary.Interfaces;
+using Common;
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace ClientLibrary
 {
-    public class MainTcpClient
+    public class MainTcpClient : IClient
     {
         private const int _port = 8005;
         private const string _host = "127.0.0.1";
