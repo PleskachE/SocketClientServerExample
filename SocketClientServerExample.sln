@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientLibrary", "ClientLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTcpServer", "AsyncTcpServer\AsyncTcpServer.csproj", "{CE167676-B808-4A49-A80B-58C9A493A0C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositoryes", "Repositoryes\Repositoryes.csproj", "{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{53059739-2921-421C-BDFE-2CFB122A8D83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{CE167676-B808-4A49-A80B-58C9A493A0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE167676-B808-4A49-A80B-58C9A493A0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE167676-B808-4A49-A80B-58C9A493A0C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53059739-2921-421C-BDFE-2CFB122A8D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53059739-2921-421C-BDFE-2CFB122A8D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53059739-2921-421C-BDFE-2CFB122A8D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53059739-2921-421C-BDFE-2CFB122A8D83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

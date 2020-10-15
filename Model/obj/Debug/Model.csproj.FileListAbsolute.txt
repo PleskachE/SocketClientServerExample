@@ -1,0 +1,6 @@
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\bin\Debug\Model.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\bin\Debug\Model.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.pdb

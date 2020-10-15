@@ -1,8 +1,10 @@
 ﻿using Common;
+using Model;
+using Repositoryes;
+using Repositoryes.Interfaces;
 using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
 
 namespace AsyncTcpServer
@@ -12,12 +14,11 @@ namespace AsyncTcpServer
         private IPEndPoint _ipPoint;
         private static ManualResetEvent _allStream;
         private Socket _listenSocket;
-        private static string _allMessage;
-        private static SystemMessage _systemMessage;
+        private static IGenericRepository<Message> _allMessage;
 
         public AsyncServer(int port, string host)
         {
-            _systemMessage = new SystemMessage();
+            _allMessage = new GenericRepository<Message>();
             _ipPoint = new IPEndPoint(IPAddress.Parse(host), port);
             _listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
@@ -33,7 +34,7 @@ namespace AsyncTcpServer
 
         public void ListenSocket()
         {
-            Console.WriteLine(_systemMessage.SystemMessages[0]);
+            Console.WriteLine(SystemMessage.ServerIsRunning());
             _listenSocket.Listen(10);
             while (true)
             {
@@ -48,14 +49,14 @@ namespace AsyncTcpServer
             _allStream.Set();
             Socket listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
-            StateObject state = new StateObject();
+            int bytes = handler.Available;
+            StateObject state = new StateObject(bytes);
             state.socket = handler;
-            handler.BeginReceive(state.date, 0, StateObject.BytesCounter, 0, new AsyncCallback(ReadCallback), state);
+            handler.BeginReceive(state.date, 0, bytes, 0, new AsyncCallback(ReadCallback), state);
         }
 
         private static void ReadCallback(IAsyncResult ar)
         {
-            String message = String.Empty;
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.socket;
             int bytes = 0;
@@ -69,16 +70,13 @@ namespace AsyncTcpServer
             }
             if (bytes > 0)
             {
-                do
+                Message message = new Message();
+                Object obj = ConverterBytes.ByteArrayToObject(state.date);
+                message = (Message)obj;
+                if ((message.Text != SystemMessage.Update()) & (message.User != null))
                 {
-                    state.builder.Append(Encoding.Unicode.GetString(state.date, 0, bytes));
-                    message = state.builder.ToString();
-                }
-                while (handler.Available > 0);
-                if (message != _systemMessage.SystemMessages[1])
-                {
-                    Console.WriteLine(DateTime.Now.ToShortTimeString() + ": " + message);
-                    _allMessage += DateTime.Now.ToShortTimeString() + ": " + message + "\n";
+                    Console.WriteLine(message.User.Name + " - " + message.Text);
+                    _allMessage.Create(message);
                 }
                 Send(handler);
             }
@@ -88,12 +86,13 @@ namespace AsyncTcpServer
         {
             try
             {
-                byte[] byteData = Encoding.Unicode.GetBytes(_allMessage);
+                byte[] byteData = ConverterBytes.ObjectToByteArray(_allMessage);
                 handler.BeginSend(byteData, 0, byteData.Length, 0, new AsyncCallback(SendCallback), handler);
             }
             catch
             {
-                byte[] byteData = Encoding.Unicode.GetBytes(_systemMessage.SystemMessages[3]);
+                byte[] byteData = ConverterBytes.ObjectToByteArray(new Message(new User("server"), 
+                    SystemMessage.NoConnection()));
                 handler.BeginSend(byteData, 0, byteData.Length, 0, new AsyncCallback(SendCallback), handler);
             }
         }

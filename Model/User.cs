@@ -2,11 +2,14 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Common
+namespace Model
 {
+    [Serializable]
     public class User : INotifyPropertyChanged
     {
         private string _name { get; set; }
+
+        public User(){}
 
         public User(string name)
         {

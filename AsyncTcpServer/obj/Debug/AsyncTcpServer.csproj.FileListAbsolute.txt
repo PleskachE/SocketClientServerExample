@@ -8,3 +8,7 @@ C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\As
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Common.pdb
 C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\obj\Debug\AsyncTcpServer.csproj.CopyComplete
+C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Model.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Repositoryes.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Model.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\AsyncTcpServer\bin\Debug\Repositoryes.pdb

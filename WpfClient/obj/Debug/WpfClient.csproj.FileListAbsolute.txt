@@ -23,3 +23,7 @@ C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\ClientL
 C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\ClientLibrary.pdb
 C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\obj\Debug\View\LoginWindow.g.cs
 C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\obj\Debug\View\LoginWindow.baml
+C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\Model.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\Repositoryes.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\Model.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\WpfClient\bin\Debug\Repositoryes.pdb

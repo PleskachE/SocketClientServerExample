@@ -9,3 +9,7 @@ C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLib
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\ClientLibrary.pdb
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Common.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Model.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Repositoryes.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Model.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Service\bin\Debug\Repositoryes.pdb

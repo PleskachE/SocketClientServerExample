@@ -1,16 +1,25 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WpfTcpClient.Model
+namespace Model
 {
+    [Serializable]
     public class Message : INotifyPropertyChanged
     {
         private string _text;
+        private User _user;
 
         public Message() { }
 
         public Message(string text)
         {
+            this._text = text;
+        }
+
+        public Message(User user, string text)
+        {
+            this._user = user;
             this._text = text;
         }
 
@@ -21,6 +30,16 @@ namespace WpfTcpClient.Model
             {
                 _text = value;
                 OnPropertyChanged("Text");
+            }
+        }
+
+        public User User
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                OnPropertyChanged("User");
             }
         }
 

@@ -1,0 +1,6 @@
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\bin\Debug\Repositoryes.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\bin\Debug\Repositoryes.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\obj\Debug\Repositoryes.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\obj\Debug\Repositoryes.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\obj\Debug\Repositoryes.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Repositoryes\obj\Debug\Repositoryes.pdb

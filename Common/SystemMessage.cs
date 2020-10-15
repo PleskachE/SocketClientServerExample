@@ -1,19 +1,15 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace Common
 {
-    public class SystemMessage
+    public static class SystemMessage
     {
-        public List<string> SystemMessages { get; set; }
-        public SystemMessage()
-        {
-            this.SystemMessages = new List<string>()
-            {
-                "Сервер запущен. Ожидание подключений...",
-                "Update",
-                "Нет соединения с сервером!",
-                "Подключение с сервером установлено!"
-            };
-        }
+        public static string ServerIsRunning()
+        { return "The server is running. Waiting for connections..."; }
+        public static string Update()
+        { return "Update"; }
+        public static string NoConnection()
+        { return "No connection to the server!"; }
+        public static string ConnectionToEstablished()
+        { return "Connection to the server is established!"; }
     }
 }

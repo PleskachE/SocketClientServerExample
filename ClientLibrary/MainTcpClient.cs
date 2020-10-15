@@ -3,7 +3,9 @@ using Common;
 using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
+using Model;
+using Repositoryes.Interfaces;
+using Repositoryes;
 
 namespace ClientLibrary
 {
@@ -13,19 +15,16 @@ namespace ClientLibrary
         private const string _host = "127.0.0.1";
 
         private IPEndPoint _ipPoint;
-        private User _user;
         private Socket _socket;
-        private string _serverMessage;
-        private SystemMessage _systemMessage;
+        private IGenericRepository<Message> _serverMessages;
 
-        public MainTcpClient(User User)
+        public MainTcpClient()
         {
-            _systemMessage = new SystemMessage();
-            _user = User;
+            _serverMessages = new GenericRepository<Message>();
             _ipPoint = new IPEndPoint(IPAddress.Parse(_host), _port);
         }
 
-        public string Start(string clientMessage)
+        public IGenericRepository<Message> Start(Message userMessage)
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
@@ -34,55 +33,44 @@ namespace ClientLibrary
             }
             catch
             {
-                return _systemMessage.SystemMessages[2];
+                _serverMessages.Create(new Message(new User("server"), SystemMessage.NoConnection()));
+                return _serverMessages;
             }
-            SendMessage(clientMessage);
+            SendMessage(userMessage);
             GetCallback();
             _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
-            return _serverMessage;
+            return _serverMessages;
         }
 
-        private void SendMessage(string clientMessage)
+        private void SendMessage(Message userMessage)
         {
-            string message;
             byte[] data;
-            if (clientMessage == _systemMessage.SystemMessages[1])
-                data = Encoding.Unicode.GetBytes(clientMessage);
-            else
-            {
-                message = _user.Name + " : " + clientMessage;
-                data = Encoding.Unicode.GetBytes(message);
-            }
+            data = ConverterBytes.ObjectToByteArray(userMessage);
             try
             {
                 _socket.Send(data);
             }
             catch (Exception ex)
             {
-                _serverMessage = ex.Message;
+                _serverMessages.Create(new Message(new User("server"), ex.Message));
             }
         }
 
         private void GetCallback()
         {
-            byte[] data = new byte[256];
-            StringBuilder builder = new StringBuilder();
-            int bytes = 0;
-            do
+            byte[] data = null;
+            try
             {
-                try
-                {
-                    bytes = _socket.Receive(data, data.Length, 0);
-                }
-                catch (Exception ex)
-                {
-                    _serverMessage = ex.Message;
-                }
-                builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                _socket.Receive(data = new byte[_socket.Available], _socket.Available, 0);
+                _socket.Receive(data = new byte[_socket.Available], _socket.Available, 0);
+                Object obj = ConverterBytes.ByteArrayToObject(data);
+                _serverMessages = (GenericRepository<Message>)obj;
             }
-            while (_socket.Available > 0);
-            _serverMessage = builder.ToString();
+            catch (Exception ex)
+            {
+                _serverMessages.Create(new Message(new User("server"), ex.Message));
+            }
         }
     }
 }

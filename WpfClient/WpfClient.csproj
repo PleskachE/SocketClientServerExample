@@ -109,6 +109,14 @@
       <Project>{b60ea2de-6b39-485f-ae00-7e5d5ed3ab94}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{53059739-2921-421C-BDFE-2CFB122A8D83}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositoryes\Repositoryes.csproj">
+      <Project>{3E279BCE-AFE7-4660-ACBC-01DD9C374B6F}</Project>
+      <Name>Repositoryes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e681781c-99f8-4bc0-92f3-fe589ff64bc4}</Project>
       <Name>Service</Name>

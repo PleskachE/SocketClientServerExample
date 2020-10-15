@@ -1,6 +1,7 @@
 ﻿using ClientLibrary;
 using ClientLibrary.Interfaces;
-using Common;
+using Model;
+using Repositoryes.Interfaces;
 using Service.Intefaces;
 
 namespace Service
@@ -9,14 +10,18 @@ namespace Service
     {
         private IClient _client;
 
-        public ClientService(User User)
+        public ClientService()
         {
-            _client = new MainTcpClient(User);
+            _client = new MainTcpClient();
         }
 
-        public string Listen(string message)
+        public string Listen(Message message)
         {
-            return _client.Start(message);
+            string serverMessage = null;
+            IGenericRepository<Message> reposMessage = _client.Start(message);
+            foreach (Message item in reposMessage.Get())
+                serverMessage += item.User.Name + " - " + item.Text + "\n";
+            return serverMessage;
         }
     }
 }

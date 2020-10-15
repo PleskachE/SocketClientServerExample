@@ -1,8 +1,10 @@
-﻿
+﻿using Model;
+using Repositoryes.Interfaces;
+
 namespace ClientLibrary.Interfaces
 {
     public interface IClient
     {
-        string Start(string clientMessage);
+        IGenericRepository<Message> Start(Message userMessage);
     }
 }
