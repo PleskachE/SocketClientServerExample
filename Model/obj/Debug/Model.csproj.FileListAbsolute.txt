@@ -4,3 +4,6 @@ C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.cspro
 C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.dll
 C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\bin\Debug\Common.dll
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\bin\Debug\Common.pdb
+C:\Users\Sony\source\repos\SocketClientServerExample\Model\obj\Debug\Model.csproj.CopyComplete

@@ -11,6 +11,7 @@ using WpfTcpClient.View;
 using Repositoryes.Interfaces;
 using Repositoryes;
 using System.Linq;
+using System.Windows.Data;
 
 namespace WpfTcpClient.ViewModel
 {
@@ -35,8 +36,10 @@ namespace WpfTcpClient.ViewModel
 
         private void Timer_tick(object sender, EventArgs e)
         {
-            _allMessages.Text = _service.Listen(new Message(null, SystemMessage.Update()));
-            AllMessages.Text = _allMessages.Text;
+            var updateMessage = new Message(new User(User.Name), null);
+            updateMessage.MessageType = MessageTypes.Update;
+            _allMessages = new ObservableCollection<Message>(_service.Listen(updateMessage).Get());
+            AllMessages = _allMessages;
         }
 
         #endregion
@@ -46,8 +49,11 @@ namespace WpfTcpClient.ViewModel
         public RelayCommand AddMesageCommand { get; }
         private void ExecuteAddMesageCommand(object parameter)
         {
-            _allMessages.Text = _service.Listen(new Message(new User(User.Name),UserMessage.Text));
-            AllMessages.Text = _allMessages.Text;
+            var message = new Message(new User(User.Name), UserMessage.Text);
+            message.DateTime = DateTime.Now;
+            message.MessageType = MessageTypes.Message;
+            _allMessages = new ObservableCollection<Message>(_service.Listen(message).Get());
+            AllMessages = _allMessages;
             UserMessage.Text = "";
         }
 
@@ -73,21 +79,15 @@ namespace WpfTcpClient.ViewModel
 
         #region Message
 
-        private Message _allMessages = new Message();
-        public Message AllMessages
+        private ObservableCollection<Message> _allMessages = new ObservableCollection<Message>();
+        public ObservableCollection<Message> AllMessages
         {
             get
-            {
-                if (_allMessages == null)
-                    _allMessages = new Message();
-                return _allMessages;
-            }
+            { return _allMessages; }
             set
             {
-                if (_allMessages == null)
-                    _allMessages = new Message();
-                _allMessages.Text += value;
-                OnPropertyChanged("Text");
+                _allMessages = value;
+                OnPropertyChanged();
             }
         }
 

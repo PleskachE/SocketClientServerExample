@@ -16,10 +16,10 @@ namespace Service
             _client = new MainTcpClient();
         }
 
-        public IEnumerable Listen(Message message)
+        public IGenericRepository<Message> Listen(Message message)
         {
             IGenericRepository<Message> messageRepository = _client.Start(message);
-            return messageRepository.Get();
+            return messageRepository;
         }
     }
 }
