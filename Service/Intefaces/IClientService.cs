@@ -1,9 +1,10 @@
 ﻿using Model;
+using System.Collections;
 
 namespace Service.Intefaces
 {
     public interface IClientService
     {
-        string Listen(Message message);
+        IEnumerable Listen(Message message);
     }
 }

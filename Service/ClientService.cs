@@ -3,6 +3,7 @@ using ClientLibrary.Interfaces;
 using Model;
 using Repositoryes.Interfaces;
 using Service.Intefaces;
+using System.Collections;
 
 namespace Service
 {
@@ -15,13 +16,10 @@ namespace Service
             _client = new MainTcpClient();
         }
 
-        public string Listen(Message message)
+        public IEnumerable Listen(Message message)
         {
-            string serverMessage = null;
-            IGenericRepository<Message> reposMessage = _client.Start(message);
-            foreach (Message item in reposMessage.Get())
-                serverMessage += item.User.Name + " - " + item.Text + "\n";
-            return serverMessage;
+            IGenericRepository<Message> messageRepository = _client.Start(message);
+            return messageRepository.Get();
         }
     }
 }

@@ -3,6 +3,7 @@ using Model;
 using Repositoryes;
 using Repositoryes.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -11,6 +12,8 @@ namespace AsyncTcpServer
 {
     public class AsyncServer
     {
+        private const int _Connectionlimit = 10;
+
         private IPEndPoint _ipPoint;
         private static ManualResetEvent _allStream;
         private Socket _listenSocket;
@@ -18,7 +21,7 @@ namespace AsyncTcpServer
 
         public AsyncServer(int port, string host)
         {
-            _allMessage = new GenericRepository<Message>();
+            _allMessage = new GenericRepository<Message>(new List<Message>());
             _ipPoint = new IPEndPoint(IPAddress.Parse(host), port);
             _listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
@@ -35,7 +38,7 @@ namespace AsyncTcpServer
         public void ListenSocket()
         {
             Console.WriteLine(SystemMessage.ServerIsRunning());
-            _listenSocket.Listen(10);
+            _listenSocket.Listen(_Connectionlimit);
             while (true)
             {
                 _allStream.Reset();
@@ -47,17 +50,17 @@ namespace AsyncTcpServer
         private static void AcceptCallback(IAsyncResult ar)
         {
             _allStream.Set();
-            Socket listener = (Socket)ar.AsyncState;
+            var listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
             int bytes = handler.Available;
-            StateObject state = new StateObject(bytes);
+            var state = new StateObject(bytes);
             state.socket = handler;
             handler.BeginReceive(state.date, 0, bytes, 0, new AsyncCallback(ReadCallback), state);
         }
 
         private static void ReadCallback(IAsyncResult ar)
         {
-            StateObject state = (StateObject)ar.AsyncState;
+            var state = (StateObject)ar.AsyncState;
             Socket handler = state.socket;
             int bytes = 0;
             try
@@ -70,12 +73,12 @@ namespace AsyncTcpServer
             }
             if (bytes > 0)
             {
-                Message message = new Message();
+                var message = new Message();
                 Object obj = ConverterBytes.ByteArrayToObject(state.date);
                 message = (Message)obj;
-                if ((message.Text != SystemMessage.Update()) & (message.User != null))
+                if (message.MessageType == MessageTypes.Message)
                 {
-                    Console.WriteLine(message.User.Name + " - " + message.Text);
+                    Console.WriteLine(message.User.Name + " : " + message.DateTime + " : " + message.Text);
                     _allMessage.Create(message);
                 }
                 Send(handler);

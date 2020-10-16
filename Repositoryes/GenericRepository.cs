@@ -1,7 +1,6 @@
 ﻿using Repositoryes.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Repositoryes
@@ -9,13 +8,9 @@ namespace Repositoryes
     [Serializable]
     public class GenericRepository<T> : IGenericRepository<T>
     {
-        private ObservableCollection<T> _collection { get; set; }
-        public GenericRepository()
-        {
-            _collection = new ObservableCollection<T>();
-        }
+        private ICollection<T> _collection { get; set; }
 
-        public GenericRepository(ObservableCollection<T> collection)
+        public GenericRepository(ICollection<T> collection)
         {
             _collection = collection;
         }
@@ -28,11 +23,6 @@ namespace Repositoryes
         public IEnumerable<T> Get(Func<T, bool> predicate)
         {
             return _collection.Where(predicate).ToList();
-        }
-
-        public T FindById(int id)
-        {
-            return _collection[id];
         }
 
         public void Create(T item)

@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using Model;
 using Repositoryes.Interfaces;
 using Repositoryes;
+using System.Collections.Generic;
 
 namespace ClientLibrary
 {
@@ -20,7 +21,7 @@ namespace ClientLibrary
 
         public MainTcpClient()
         {
-            _serverMessages = new GenericRepository<Message>();
+            _serverMessages = new GenericRepository<Message>(new List<Message>());
             _ipPoint = new IPEndPoint(IPAddress.Parse(_host), _port);
         }
 
@@ -45,8 +46,7 @@ namespace ClientLibrary
 
         private void SendMessage(Message userMessage)
         {
-            byte[] data;
-            data = ConverterBytes.ObjectToByteArray(userMessage);
+            byte[] data = ConverterBytes.ObjectToByteArray(userMessage);
             try
             {
                 _socket.Send(data);

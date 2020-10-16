@@ -9,7 +9,7 @@ namespace AsyncTcpServer
 
         static void Main(string[] args)
         {
-            AsyncServer server = new AsyncServer(port, host);
+            var server = new AsyncServer(port, host);
             server.ListenSocket();
             Console.ReadKey();
         }
